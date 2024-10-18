@@ -7,7 +7,7 @@ const Services_Data = [
     {
         s_no:"02",
         s_name:"Graphics design",
-        s_desc:"I offer thoughtful, intuitive user interface and user experience design services. Using tools like Figma and Tailwind CSS, I can design clear, responsive..."
+        s_desc:"I offer thoughtful, intuitive user interface and user experience design services. Using tools like Figma and Tailwind CSS,..."
     },
     {
         s_no:"03",
