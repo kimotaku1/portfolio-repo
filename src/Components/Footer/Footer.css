@@ -75,6 +75,13 @@
         flex-direction: column-reverse;
         margin-bottom: 50px;
     }
+    .footer-email-input input{
+        width: 150px;
+    }
+    .footer-top-right{
+        display: flex;
+        flex-direction: column;
+    }
 }
 .footer-theme{
     position: absolute;

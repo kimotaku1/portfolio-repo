@@ -101,3 +101,38 @@
         gap: 30px;
     }
 }
+@media(max-width:520px){
+    .services{
+        align-items: start;
+        gap: 70px;
+        margin: 20px 70px;
+    }
+    .services-title h1{
+        padding: 0;
+        font-size: 50px;
+    }
+    .services-title image{
+        width: 120px;
+        margin-right: -20px;
+    }
+    .services-format{
+        gap: 20px;
+        padding: 32px;
+    }
+    .services-format h2{
+        font-size: 28px;
+    }
+    .services-format p{
+        font-size: 18px;
+        line-height: 32px;
+        max-width: 300px;
+    }
+    .services-readmore img{
+        width: 20px;
+    }
+    .services-container{
+        grid-template-columns: 1fr;
+        grid-column-start: 3; 
+        gap: 30px;
+    }
+}
