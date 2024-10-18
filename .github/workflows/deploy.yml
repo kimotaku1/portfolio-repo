@@ -1,51 +1,28 @@
-name: Deploy
+name: Example Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+    - name: Check out the repository
+      uses: actions/checkout@v3  # This uses the latest version of checkout
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v3  # Use the latest setup-node version
+      with:
+        node-version: '20'  # Explicitly use Node.js version 20
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+    - name: Install dependencies
+      run: npm install  # Install your project's dependencies
 
-      - name: Build project
-        run: npm run build
+    - name: Build project
+      run: npm run build  # Run your project's build command
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3  # Use the latest version of upload-artifact
+      with:
+        name: build-artifact
+        path: ./build  # Specify the correct path for the built artifact
