@@ -8,21 +8,21 @@ jobs:
 
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v3  # This uses the latest version of checkout
+      uses: actions/checkout@v3  # Latest version of checkout
 
     - name: Set up Node.js 20
-      uses: actions/setup-node@v3  # Use the latest setup-node version
+      uses: actions/setup-node@v3  # Latest setup-node version
       with:
-        node-version: '20'  # Explicitly use Node.js version 20
+        node-version: '20'  # Use Node.js version 20 explicitly
 
     - name: Install dependencies
-      run: npm install  # Install your project's dependencies
+      run: npm install  # Install project dependencies
 
     - name: Build project
-      run: npm run build  # Run your project's build command
+      run: npm run build  # Build the project
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3  # Use the latest version of upload-artifact
       with:
         name: build-artifact
-        path: ./build  # Specify the correct path for the built artifact
+        path: ./build  # Specify the correct path for the artifact
