@@ -62,6 +62,58 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+.footer-theme{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: -1; 
+    width: 80px;
+}
+/* General styling for the footer-social container */
+.footer-social {
+    display: flex;
+    justify-content: end;
+    gap: 40px; /* Space between each social link group */
+    padding: 20px;
+    /* background-color: #222; */
+    color: white;
+  }
+  
+  /* Each individual social link group */
+  .footer-social div {
+    display: flex;
+    align-items: center; /* Aligns icons and text vertically */
+    gap: 10px; /* Space between icon and text */
+  }
+  
+  /* Style the links inside the footer */
+  .footer-social a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .footer-social a:hover {
+    color: #1da1f2; /* Change this color for each link if needed */
+  }
+  
+  /* Style the text inside the anchor tags */
+  .footer-social a span {
+    font-size: 16px;
+  }
+  
+  /* Adjust icon size */
+  .footer-social svg {
+    color: white; /* Icon color */
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for icons */
+  .footer-social div:hover svg {
+    color: #1da1f2; /* Same hover color as the link */
+  }
+  
 @media(max-width:760px){
     .footer{
         margin: 50px 70px;
@@ -82,11 +134,14 @@
         display: flex;
         flex-direction: column;
     }
-}
-.footer-theme{
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    z-index: -1; 
-    width: 80px;
+    .footer-social{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        /* gap: 10px;
+        padding-bottom: 20px; */
+    }
+    .footer-social div:hover svg {
+        color: #1da1f2; /* Same hover color as the link */
+      }
 }
