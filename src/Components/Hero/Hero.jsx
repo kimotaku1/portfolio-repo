@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 import profile_img from "../../assets/profile_img.jpg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -28,9 +29,14 @@ const Hero = () => {
             Connect With Me
           </AnchorLink>
         </div>
-        <div className="px-8 py-3 rounded-full border-2 border-white cursor-pointer hover:border-purple-500 transition-colors duration-300">
+        
+        {/* Use Link to navigate to the Resume page */}
+        <Link
+          to="/portfolio-repo/resume"
+          className="px-8 py-3 rounded-full border-2 border-white cursor-pointer hover:border-purple-500 transition-colors duration-300"
+        >
           My Resume
-        </div>
+        </Link>
       </div>
     </div>
   );
