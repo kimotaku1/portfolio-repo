@@ -13,7 +13,7 @@ const Services = () => {
         {Services_Data.map((service, index) => (
           <div key={index} className='flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-10 border-2 border-white rounded-lg transition-all cursor-pointer hover:scale-105 hover:border-purple-500 hover:bg-gradient-to-br from-purple-900 via-red-800 to-yellow-900'>
             <h3 className='text-xl font-semibold'>{service.s_no}</h3>
-            <h2 className='text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-500 to-purple-600 bg-clip-text text-transparent'>{service.s_name}</h2>
+            <h2 className='text-xl md:text-2xl font-bold bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent'>{service.s_name}</h2>
             <p className='text-gray-400 text-base md:text-lg leading-6 md:leading-8 max-w-[300px]'>{service.s_desc}</p>
             <div className="flex items-center gap-3 mt-4">
               <p className='text-base md:text-lg'>Read More</p>

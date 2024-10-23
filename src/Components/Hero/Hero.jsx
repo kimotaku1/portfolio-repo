@@ -11,7 +11,7 @@ const Hero = () => {
         className="w-32 h-32 md:w-64 md:h-64 lg:mt-24 mt-14 rounded-full"
       />
       <h1 className="text-center text-4xl md:text-6xl font-semibold">
-        <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent">
           I'm Bibek Bhandari,
         </span>{" "}
         front-end developer.
@@ -23,7 +23,7 @@ const Hero = () => {
         like to learn more!
       </p>
       <div className="flex flex-col md:flex-row items-center gap-6 text-lg font-medium mb-12">
-        <div className="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 cursor-pointer transition-transform transform hover:scale-105 hover:from-yellow-500 hover:to-purple-500">
+        <div className="w-44 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
           <AnchorLink className="text-white" offset={50} href="#contact">
             Connect With Me
           </AnchorLink>

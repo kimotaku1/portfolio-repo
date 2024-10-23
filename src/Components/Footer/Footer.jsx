@@ -14,7 +14,7 @@ const Footer = () => {
 
   const handleSubscribe = () => {
     if (!email) {
-      setError("Please enter your email.");
+      alert("Please enter your email.");
       return;
     }
     alert(`Subscribed with email: ${email}`);
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
           <button
             onClick={handleSubscribe}
-            className="bg-gradient-to-r from-[#DF89008] to-[#B415FF] text-white py-3 px-6 rounded-full transition-transform hover:scale-105"
+            className="w-40 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform"
           >
             Subscribe
           </button>

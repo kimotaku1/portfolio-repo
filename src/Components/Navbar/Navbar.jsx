@@ -59,7 +59,7 @@ const Navbar = () => {
       </ul>
 
       {/* Connect With Me Button */}
-      <div className="hidden lg:block  bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 px-8 py-4 rounded-full cursor-pointer transition-transform transform hover:scale-105 hover:from-yellow-500 hover:to-purple-500">
+      <div className="w-44 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
         <AnchorLink href="#contact" offset={50} className="text-white text-lg">
           Connect With Me
         </AnchorLink>
