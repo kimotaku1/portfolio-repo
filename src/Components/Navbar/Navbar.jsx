@@ -1,40 +1,71 @@
-import React, { useRef, useState } from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.png'
-import underline from '../../assets/nav_underline.svg'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import menu_open from '../../assets/menu_open.svg'
-import menu_close from '../../assets/menu_close.svg'
-import theme_pattern from '../../assets/theme_pattern.svg'
+import React, { useState } from 'react';
+import logo from '../../assets/logo.png';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import menu_open from '../../assets/menu_open.svg';
+import menu_close from '../../assets/menu_close.svg';
 
 const Navbar = () => {
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const [menu, setMenu] = useState("home");
-  const menuRef = useRef();
 
-  const openMenu = ()=>{
-    menuRef.current.style.right="0";
-  }
-  const closeMenu = ()=>{
-    menuRef.current.style.right="-350px";
-  }
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <div className='navbar'>
-        <img src={logo} alt="" />
-        <img src={theme_pattern} alt="" className='theme-img'/>
-        <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
-        <ul ref={menuRef} className='nav-menu'>
-          <img src={menu_close} onClick={closeMenu} alt="" className='nav-mob-close'/>
-            <li><AnchorLink className='anchor-link' href='#home'><p onClick={()=>{setMenu("home")}}>Home</p></AnchorLink>{menu==="home"?<img src={underline} alt='' className='nav-theme'/>:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#about'><p onClick={()=>{setMenu("about")}}>About Me</p></AnchorLink>{menu==="about"?<img src={underline} alt='' className='nav-theme'/>:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={()=>{setMenu("services")}}>Services</p></AnchorLink>{menu==="services"?<img src={underline} alt='' className='nav-theme'/>:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#work'><p onClick={()=>{setMenu("work")}}>Portfolio</p></AnchorLink>{menu==="work"?<img src={underline} alt='' className='nav-theme'/>:<></>}</li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>{setMenu("contact")}}>Contact</p></AnchorLink>{menu==="contact"?<img src={underline} alt='' className='nav-theme'/>:<></>}</li>
-        </ul>
-        <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
-    </div>
-  )
-}
+    <div className="relative flex items-center justify-between px-4 lg:px-40 py-6">
+      <img src={logo} alt="logo" className="h-16" />
 
-export default Navbar
+      {/* Mobile Menu Toggle */}
+      <div className="lg:hidden">
+        {menuOpen ? (
+          <img
+            src={menu_close}
+            onClick={toggleMenu}
+            alt="close menu"
+            className="cursor-pointer z-20 w-8"
+          />
+        ) : (
+          <img
+            src={menu_open}
+            onClick={toggleMenu}
+            alt="open menu"
+            className="cursor-pointer z-20 w-8"
+          />
+        )}
+      </div>
+
+      {/* Navigation Menu */}
+      <ul
+        className={`${
+          menuOpen ? 'right-0' : '-right-full'
+        } fixed top-0 w-[300px] h-full bg-gray-800 flex flex-col items-start gap-6 px-8 py-20 transition-all duration-500 lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
+      >
+        {['home', 'about', 'services', 'work', 'contact'].map((item) => (
+          <li key={item} className="relative">
+            <AnchorLink
+              href={`#${item}`}
+              offset={50}
+              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400"
+              onClick={() => {
+                setMenu(item);
+                setMenuOpen(false); // Close the menu on item click
+              }}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </AnchorLink>
+          </li>
+        ))}
+      </ul>
+
+      {/* Connect With Me Button */}
+      <div className="hidden lg:block bg-gradient-to-r from-purple-500 to-yellow-500 px-8 py-4 rounded-full cursor-pointer transition-transform transform hover:scale-105 hover:from-yellow-500 hover:to-purple-500">
+        <AnchorLink href="#contact" offset={50} className="text-white text-lg">
+          Connect With Me
+        </AnchorLink>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
