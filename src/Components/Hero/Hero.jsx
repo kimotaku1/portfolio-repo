@@ -23,7 +23,7 @@ const Hero = () => {
         like to learn more!
       </p>
       <div className="flex flex-col md:flex-row items-center gap-6 text-lg font-medium mb-12">
-        <div className="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 cursor-pointer">
+        <div className="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 cursor-pointer transition-transform transform hover:scale-105 hover:from-yellow-500 hover:to-purple-500">
           <AnchorLink className="text-white" offset={50} href="#contact">
             Connect With Me
           </AnchorLink>
