@@ -64,7 +64,7 @@ const Contact = () => {
         <form onSubmit={onSubmit} className="flex flex-col gap-6">
           <label className="text-gray-300 text-lg font-medium">Your Name</label>
           <input
-            type="text" required="true"
+            type="text" required={true}
             placeholder="Enter your name"
             name="name"
             className="w-full md:w-[700px] h-16 px-4 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
@@ -73,7 +73,7 @@ const Contact = () => {
             Your Email
           </label>
           <input
-            type="email" required="true"
+            type="email" required={true}
             placeholder="Enter your email"
             name="email"
             className="w-full md:w-[700px] h-16 px-4 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
@@ -82,7 +82,7 @@ const Contact = () => {
             Write your message here
           </label>
           <textarea
-            name="message" required="true"
+            name="message" required={true}
             rows="8"
             placeholder="Enter your message"
             className="w-full md:w-[650px] p-6 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"

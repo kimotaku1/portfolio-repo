@@ -1,54 +1,48 @@
-import React, { useState } from 'react';
-import logo from '../../assets/logo.png';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import menu_open from '../../assets/menu_open.svg';
-import menu_close from '../../assets/menu_close.svg';
+import React, { useState } from "react";
+import logo from "../../assets/logo.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import menu_open from "../../assets/menu_open.svg";
+import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [menu, setMenu] = useState("home");
+  const [activeMenu, setActiveMenu] = useState("home");
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   return (
-    <div className="relative flex items-center justify-between px-4 lg:px-40 py-6">
+    <nav className="relative flex items-center justify-between px-4 lg:px-40 py-6">
       <img src={logo} alt="logo" className="h-14" />
 
       {/* Mobile Menu Toggle */}
-      <div className="lg:hidden">
-        {menuOpen ? (
-          <img
-            src={menu_close}
-            onClick={toggleMenu}
-            alt="close menu"
-            className="cursor-pointer z-20 w-8"
-          />
-        ) : (
-          <img
-            src={menu_open}
-            onClick={toggleMenu}
-            alt="open menu"
-            className="cursor-pointer z-20 w-8"
-          />
-        )}
-      </div>
+      <button
+        className="lg:hidden focus:outline-none"
+        onClick={toggleMenu}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+      >
+        <img
+          src={menuOpen ? menu_close : menu_open}
+          alt={menuOpen ? "Close menu" : "Open menu"}
+          className="cursor-pointer z-20 w-8"
+        />
+      </button>
 
       {/* Navigation Menu */}
       <ul
         className={`${
-          menuOpen ? 'right-0' : '-right-full'
-        } fixed top-0 w-[300px] h-full bg-gray-800 flex flex-col items-start gap-6 px-8 py-20 transition-all duration-500 lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
+          menuOpen ? "right-0 top-0 " : "-right-full"
+        } fixed top-0 w-[300px] h-full bg-gray-800 z-50 flex flex-col items-end gap-6 px-8 py-20 transition-transform duration-500 lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
       >
-        {['home', 'about', 'services', 'work', 'contact'].map((item) => (
-          <li key={item} className="relative">
+        {["home", "about", "services", "work", "contact"].map((item) => (
+          <li key={item} className="relative w-full">
             <AnchorLink
               href={`#${item}`}
               offset={50}
-              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400 "
+              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400 w-full text-right"
               onClick={() => {
-                setMenu(item);
+                setActiveMenu(item);
                 setMenuOpen(false); // Close the menu on item click
               }}
             >
@@ -58,13 +52,13 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Connect With Me Button */}
-      <div className="w-44 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
+      {/* Connect With Me Button (Desktop Only) */}
+      <div className="hidden lg:block w-44 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
         <AnchorLink href="#contact" offset={50} className="text-white text-lg">
           Connect With Me
         </AnchorLink>
       </div>
-    </div>
+    </nav>
   );
 };
 
