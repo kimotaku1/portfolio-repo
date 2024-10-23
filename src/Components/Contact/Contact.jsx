@@ -85,7 +85,7 @@ const Contact = () => {
             name="message" required="true"
             rows="8"
             placeholder="Enter your message"
-            className="w-11/12 md:w-[650px] p-6 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
+            className="w-full md:w-[650px] p-6 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
           ></textarea>
           <button
             type="submit"
