@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/" />
+    <script>
+      // This script redirects back to the root and passes the path along to React Router
+      var path = window.location.pathname;
+      var newUrl = window.location.origin + '/portfolio-repo' + path;
+      window.location.replace(newUrl);
+    </script>
+    <title>Page Not Found</title>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
