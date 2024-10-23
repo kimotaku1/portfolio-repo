@@ -8,7 +8,7 @@ import MyWork from './Components/MyWork/MyWork';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import './index.css';  // Assuming this file contains Tailwind directives
-import Resume from './pages/resume';
+import Resume from './pages/Resume';
 
 const App = () => {
   return (
