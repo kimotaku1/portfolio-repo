@@ -11,7 +11,7 @@ const About = () => {
         <div className="lg:w-1/3 hidden lg:block">
           <img src={profile_img2} alt="Profile" className='w-[250px] h-[400px] rounded-lg' />
         </div>
-        <div className="lg:w-1/2 flex flex-col gap-10">
+        <div className="lg:w-1/2 flex flex-col gap-10 mx-6">
           <div className='flex flex-col gap-5 text-lg font-medium'>
             <p>Hi, I'm Bibek Bhandari, a BIM student with a passion for web development and technology innovation. I'm focused on building dynamic, user-centric web applications using modern frameworks like React and Vite. I enjoy solving complex problems and am always eager to learn new technologies.</p>
             <p>I have experience working with both front-end and back-end technologies, and I’m constantly exploring how I can make a positive impact through tech. Currently, I’m working on a YouTube-like web app that enhances my skills in full-stack development.</p>
@@ -32,7 +32,8 @@ const About = () => {
           <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent'>2+</h1>
           <p className='text-lg font-medium'>YEARS OF EXPERIENCE</p>
         </div>
-        <hr className='border-t border-gray-300 w-1/12 hidden lg:block' />
+        {/* Vertical line using a div */}
+        <div className='hidden lg:block w-1 border-l border-gray-300 h-20 mx-4'></div>
         <div className="flex flex-col items-center gap-2 hover:scale-110 transition-all">
           <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent'>10+</h1>
           <p className='text-lg font-medium'>PROJECTS COMPLETED</p>

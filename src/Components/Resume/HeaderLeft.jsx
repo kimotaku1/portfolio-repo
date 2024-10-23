@@ -4,8 +4,8 @@ import {
   BiCurrentLocation,
   BiEnvelope,
   BiLogoGithub,
+  BiLogoInstagram,
   BiLogoLinkedin,
-  BiLogoTwitter,
   BiMoon,
   BiPhone,
   BiSun,
@@ -55,18 +55,18 @@ const HeaderLeft = ({ darkMode, toggleDarkMode }) => {
           <h1 className="text-base font-semibold md:text-2xl">SOCIAL</h1>
 
           <ul className="space-y-3">
-            <li className="flex items-center gap-2">
+            <a href="https://github.com/kimotaku1" className="flex items-center gap-2">
               <BiLogoGithub className="text-xl" />
-              <span>github.com/kimotaku1</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <BiLogoTwitter className="text-xl" />
-              <span>twitteruser</span>
-            </li>
-            <li className="flex items-center gap-2">
+              <span>github</span>
+            </a>
+            <a href="https://www.instagram.com/yahallo.02/" className="flex items-center gap-2">
+              <BiLogoInstagram className="text-xl" />
+              <span>instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/bibek-841246334/" className="flex items-center gap-2">
               <BiLogoLinkedin className="text-xl" />
-              <span>linkedinuser</span>
-            </li>
+              <span>linkedIn</span>
+            </a>
           </ul>
         </div>
 

@@ -9,14 +9,15 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import './index.css';  // Assuming this file contains Tailwind directives
 import Resume from './pages/Resume';
+import ScrollToTop from './Components/ScrollToTop ';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/portfolio-repo" >
       <Routes>
         {/* Route for the main homepage */}
         <Route
-          path="/portfolio-repo"
+          path="/"
           element={
             <>
               <Navbar />
@@ -26,12 +27,13 @@ const App = () => {
               <MyWork />
               <Contact />
               <Footer />
+              <ScrollToTop/>
             </>
           }
         />
 
         {/* Route for the Resume page */}
-        <Route path="/portfolio-repo/resume" element={<Resume />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </Router>
   );

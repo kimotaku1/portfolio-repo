@@ -5,7 +5,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Hero = () => {
   return (
-    <div id="home" className="flex flex-col items-center gap-6 md:gap-9 px-4 md:px-8">
+    <div id="home" className="flex flex-col items-center gap-6 md:gap-9 px-4 md:px-8 mx-6">
       <img
         src={profile_img}
         alt="Profile"
@@ -15,10 +15,10 @@ const Hero = () => {
         <span className="bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent">
           I'm Bibek Bhandari,
         </span>{" "}
-        front-end developer.
+        Web developer.
       </h1>
       <p className="text-center w-full md:w-3/4 lg:w-1/2 text-lg leading-8">
-        I am a front-end developer with 2 years of experience using React and
+        I am a Web developer with 2 years of experience using React and
         NodeJS. I am passionate about using technology to solve real-world
         problems and aim to become a full-stack developer. Reach out if you'd
         like to learn more!
@@ -32,7 +32,7 @@ const Hero = () => {
         
         {/* Use Link to navigate to the Resume page */}
         <Link
-          to="/portfolio-repo/resume"
+          to="/resume"
           className="px-8 py-3 rounded-full border-2 border-white cursor-pointer hover:border-purple-500 transition-colors duration-300"
         >
           My Resume
