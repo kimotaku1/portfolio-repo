@@ -2,16 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0;url=/" />
-    <script>
-      // This script redirects back to the root and passes the path along to React Router
-      var path = window.location.pathname;
-      var newUrl = window.location.origin + '/portfolio-repo' + path;
-      window.location.replace(newUrl);
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
+    <script type="text/javascript">
+      // GitHub Pages 404 redirect to index.html
+      (function() {
+        var path = window.location.pathname;
+        var repoName = '/portfolio-repo';  // <-- Replace with your GitHub Pages repo name
+        var redirectTo = window.location.protocol + "//" + window.location.host + repoName + "/#" + path;
+        window.location.replace(redirectTo);
+      })();
+    </script>
   </head>
   <body>
+    <h1>Page Not Found</h1>
     <p>Redirecting...</p>
   </body>
 </html>
