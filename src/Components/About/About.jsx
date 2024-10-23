@@ -3,12 +3,12 @@ import profile_img2 from '../../assets/profile_img2.jpg';
 
 const About = () => {
   return (
-    <div id='about' className='flex flex-col items-center justify-center gap-20 mx-4 md:mx-10 lg:mx-40 my-20'>
+    <div id='about' className='flex flex-col items-start lg:items-center justify-center lg:gap-20 gap-10 mx-4 md:mx-10 lg:mx-40 my-20'>
       <div className="relative">
-        <h1 className='px-4 md:px-8 align-l text-4xl md:text-5xl font-semibold'>About Me</h1>
+        <h1 className='px-4 md:px-8 text-4xl md:text-5xl font-semibold'>About Me</h1>
       </div>
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
-        <div className="lg:w-1/2 hidden lg:block">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-1">
+        <div className="lg:w-1/3 hidden lg:block">
           <img src={profile_img2} alt="Profile" className='w-[250px] h-[400px] rounded-lg' />
         </div>
         <div className="lg:w-1/2 flex flex-col gap-10">
@@ -18,9 +18,10 @@ const About = () => {
           </div>
           <div className="flex flex-col gap-5">
             {['HTML & CSS', 'React JS', 'JavaScript', 'Next JS'].map((skill, index) => (
-              <div key={index} className="flex gap-12 items-center hover:scale-105 transition-all">
+              <div key={index} className="flex items-center">
                 <p className='min-w-[150px] text-xl font-medium'>{skill}</p>
-                <hr className={`w-${index % 2 === 0 ? '1/2' : '3/4'} h-2 rounded-full bg-gradient-to-r from-yellow-500 to-purple-600`} />
+                <hr className={`h-2 rounded-full bg-gradient-to-r from-yellow-500 to-purple-600 
+                  ${index === 0 ? 'w-2/3' : index === 1 ? 'w-1/2' : index === 2 ? 'w-3/4' : 'w-1/2'} ml-4`} />
               </div>
             ))}
           </div>

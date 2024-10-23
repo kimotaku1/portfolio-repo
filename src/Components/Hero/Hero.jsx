@@ -8,7 +8,7 @@ const Hero = () => {
       <img
         src={profile_img}
         alt="Profile"
-        className="w-32 h-32 md:w-64 md:h-64 mt-24 rounded-full"
+        className="w-32 h-32 md:w-64 md:h-64 lg:mt-24 mt-14 rounded-full"
       />
       <h1 className="text-center text-4xl md:text-6xl font-semibold">
         <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to-purple-700 bg-clip-text text-transparent">

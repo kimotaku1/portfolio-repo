@@ -1,40 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
 
 const Contact = () => {
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   const onSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true);
+    const formData = new FormData(event.target);
 
-    const { name, email, message } = formData;
+    formData.append("access_key", "0d0817fe-fb5a-462a-922d-049db623bdd0");
 
-    if (!name || !email || !message) {
-      alert("Please fill out all fields.");
-      setLoading(false);
-      return;
-    }
-
-    const data = new FormData();
-    data.append("name", name);
-    data.append("email", email);
-    data.append("message", message);
-    data.append("access_key", "0d0817fe-fb5a-462a-922d-049db623bdd0");
-
-    const json = JSON.stringify(Object.fromEntries(data));
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -45,19 +22,18 @@ const Contact = () => {
       body: json,
     }).then((res) => res.json());
 
-    setLoading(false);
     if (res.success) {
       alert(res.message);
-      setFormData({ name: '', email: '', message: '' }); // Clear form after submission
-    } else {
-      alert("Submission failed. Please try again.");
     }
   };
 
   return (
-    <div id="contact" className="flex flex-col items-center justify-center gap-20 mx-4 md:mx-20 lg:mx-40 my-20">
+    <div
+      id="contact"
+      className="flex flex-col items-center justify-center gap-10 lg:gap-20 mx-40 my-20"
+    >
       <div className="relative">
-        <h1 className="text-5xl font-semibold px-8">Get in touch</h1>
+        <h1 className="text-5xl font-semibold px-6 w-80">Get in touch</h1>
       </div>
       <div className="flex flex-col md:flex-row gap-24">
         <div className="flex flex-col gap-8">
@@ -86,45 +62,36 @@ const Contact = () => {
           </div>
         </div>
         <form onSubmit={onSubmit} className="flex flex-col gap-6">
-          <label className="text-gray-300 text-lg font-medium" htmlFor="name">Your Name</label>
+          <label className="text-gray-300 text-lg font-medium">Your Name</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={onChange}
             placeholder="Enter your name"
+            name="name"
             className="w-full md:w-[700px] h-16 px-4 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
-            required
           />
-          <label className="text-gray-300 text-lg font-medium" htmlFor="email">Your Email</label>
+          <label className="text-gray-300 text-lg font-medium">
+            Your Email
+          </label>
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={onChange}
             placeholder="Enter your email"
+            name="email"
             className="w-full md:w-[700px] h-16 px-4 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
-            required
           />
-          <label className="text-gray-300 text-lg font-medium" htmlFor="message">Write your message here</label>
+          <label className="text-gray-300 text-lg font-medium">
+            Write your message here
+          </label>
           <textarea
-            id="message"
             name="message"
             rows="8"
-            value={formData.message}
-            onChange={onChange}
             placeholder="Enter your message"
-            className="w-full md:w-[650px] p-6 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
-            required
+            className="w-11/12 md:w-[650px] p-6 rounded-md bg-[#32323c] text-gray-400 text-lg focus:outline-none"
           ></textarea>
           <button
             type="submit"
-            disabled={loading} // Disable the button while loading
-            className={`w-48 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className="w-48 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform"
           >
-            {loading ? 'Submitting...' : 'Submit now'}
+            Submit now
           </button>
         </form>
       </div>

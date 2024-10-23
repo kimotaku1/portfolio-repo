@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className="relative flex items-center justify-between px-4 lg:px-40 py-6">
-      <img src={logo} alt="logo" className="h-16" />
+      <img src={logo} alt="logo" className="h-14" />
 
       {/* Mobile Menu Toggle */}
       <div className="lg:hidden">
@@ -46,7 +46,7 @@ const Navbar = () => {
             <AnchorLink
               href={`#${item}`}
               offset={50}
-              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400"
+              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400 "
               onClick={() => {
                 setMenu(item);
                 setMenuOpen(false); // Close the menu on item click

@@ -4,9 +4,9 @@ import arrow_icon from '../../assets/arrow_icon.svg';
 
 const MyWork = () => {
   return (
-    <div id='work' className='flex flex-col items-center justify-center gap-20 mx-4 md:mx-20 lg:mx-40 my-20'>
+    <div id='work' className='flex flex-col items-start lg:items-center justify-center gap-10 lg:gap-20 mx-4 md:mx-20 lg:mx-40 my-20'>
       <div className="relative">
-        <h1 className='text-5xl font-medium px-8 text-center'>My Latest Work</h1>
+        <h1 className='text-5xl font-medium px-8 text-start'>My Latest Work</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
         {mywork_data.map((work, index) => (
