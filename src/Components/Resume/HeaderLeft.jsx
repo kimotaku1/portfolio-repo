@@ -11,13 +11,12 @@ import {
   BiSun,
 } from "react-icons/bi";
 
-const HeaderLeft = ({ darkMode, toggleDarkMode, showToggle }) => {
+const HeaderLeft = ({ darkMode, toggleDarkMode, isDownloading }) => {
   return (
     <div className="min-h-screen flex-1 relative p-10 transition-all duration-500 dark:bg-black dark:text-white sm:border-r dark:border-gray-700">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
           <img src={profile_img} alt="" className="w-32 h-32 rounded-full " />
-
           <div className="text-center space-y-1">
             <h1 className="text-4xl font-light">
               Bibek <span className="font-semibold">Bhandari</span>
@@ -25,12 +24,15 @@ const HeaderLeft = ({ darkMode, toggleDarkMode, showToggle }) => {
             <h3 className="text-xl font-light">Web Developer</h3>
           </div>
 
-          {/* Conditional rendering of the dark mode toggle button */}
-          {showToggle && (
-            <button className="absolute right-10 top-10 dark-mode-toggle" onClick={toggleDarkMode}>
-            {darkMode ? <BiSun className="text-2xl" /> : <BiMoon className="text-2xl" />}
-          </button>
-          
+          {/* Toggle Button */}
+          {!isDownloading && (
+            <button className="absolute right-10 top-10" onClick={toggleDarkMode}>
+              {darkMode ? (
+                <BiSun className="text-2xl" />
+              ) : (
+                <BiMoon className="text-2xl" />
+              )}
+            </button>
           )}
         </div>
 

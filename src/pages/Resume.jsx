@@ -6,6 +6,7 @@ import { BiDownload } from "react-icons/bi";
 
 const Resume = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false); // New state for download status
   const resumeRef = useRef();
   const downloadButtonRef = useRef();
 
@@ -15,17 +16,13 @@ const Resume = () => {
   };
 
   const downloadResume = () => {
+    console.log("Download button clicked"); // Debugging line
     const element = resumeRef.current;
     const downloadButton = downloadButtonRef.current;
 
-    // Hide the download button
+    // Set downloading state to true
+    setIsDownloading(true);
     downloadButton.style.display = "none";
-    
-    // Hide the dark mode toggle button
-    const darkModeToggle = element.querySelector('.dark-mode-toggle');
-    if (darkModeToggle) {
-      darkModeToggle.style.display = 'none'; // Hide dark mode toggle
-    }
 
     const opt = {
       margin: 0,
@@ -35,15 +32,15 @@ const Resume = () => {
       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     };
 
-    html2pdf().from(element).set(opt).save().finally(() => {
-      // Show the download button again
-      downloadButton.style.display = "block";
-      
-      // Show the dark mode toggle button again
-      if (darkModeToggle) {
-        darkModeToggle.style.display = 'block'; // Show dark mode toggle again
-      }
-    });
+    html2pdf()
+      .from(element)
+      .set(opt)
+      .save()
+      .finally(() => {
+        // Reset state after download
+        setIsDownloading(false);
+        downloadButton.style.display = "block";
+      });
   };
 
   return (
@@ -57,13 +54,13 @@ const Resume = () => {
           className="fixed right-10 bottom-5 p-4 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg transition-all duration-300 ease-in-out border-solid border-red-300"
           onClick={downloadResume}
           ref={downloadButtonRef}
-          style={{ touchAction: 'manipulation', zIndex: 10 }} 
+          style={{ touchAction: 'manipulation', zIndex: 10 }}
         >
           <BiDownload className="text-2xl" />
         </button>
 
         {/* Resume Content */}
-        <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} isDownloading={isDownloading} />
         <Home />
       </div>
     </>

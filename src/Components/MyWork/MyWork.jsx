@@ -27,16 +27,18 @@ const MyWork = () => {
             />
             <h2 className="text-xl">{work.w_name}</h2>
             <p className="text-gray-400">{work.w_description}</p>
-            <a
-              href={work.w_link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Github Link"
-              className="flex justify-center items-center gap-2 border-2 border-solid px-5 py-3 rounded-full transition-all hover:scale-105 mr-32" // Ensures the width is only as wide as the content
-            >
-              <BiCode size={25}/>
-              <span>Github</span>
-            </a>
+            <div className="flex-row w-2/4 justify-center items-center gap-2 border-2 border-solid px-5 py-3 rounded-full transition-all hover:scale-105 text-center">
+              <a
+                href={work.w_link || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Github Link"
+                className="flex flex-row"
+              >
+                <BiCode size={25} />
+                <span className="text-center">Github</span>
+              </a>
+            </div>
           </div>
         ))}
       </div>
