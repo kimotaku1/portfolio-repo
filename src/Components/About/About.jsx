@@ -12,7 +12,7 @@ const About = () => {
           <img src={profile_img2} alt="Profile" className='w-[250px] h-[400px] rounded-lg' />
         </div>
         <div className="lg:w-1/2 flex flex-col gap-10 mx-6">
-          <div className='flex flex-col gap-5 text-lg font-medium'>
+          <div className='flex flex-col gap-5 text-lg font-medium text-gray-400'>
             <p>Hi, I'm Bibek Bhandari, a BIM student with a passion for web development and technology innovation. I'm focused on building dynamic, user-centric web applications using modern frameworks like React and Vite. I enjoy solving complex problems and am always eager to learn new technologies.</p>
             <p>I have experience working with both front-end and back-end technologies, and I’m constantly exploring how I can make a positive impact through tech. Currently, I’m working on a YouTube-like web app that enhances my skills in full-stack development.</p>
           </div>

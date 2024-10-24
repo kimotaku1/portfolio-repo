@@ -41,11 +41,10 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-transparent bg-clip-text">
             Let's talk
           </h1>
-          <p className="max-w-lg text-gray-300 text-lg leading-relaxed">
+          <p className="max-w-lg text-gray-400 text-lg leading-relaxed">
             I’m always excited to work on new projects, whether it’s building a
             dynamic web app or exploring new tech innovations. If you’re looking
-            for a passionate developer to collaborate with, or if you just want
-            to talk about coding or gaming, feel free to reach out!
+            for a passionate developer to collaborate with, feel free to reach out!
           </p>
           <div className="flex flex-col gap-8 text-gray-300 text-xl">
             <div className="flex items-center gap-4">
@@ -133,7 +132,7 @@ const Contact = () => {
             type="submit"
             className="w-48 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform mx-3"
           >
-            Submit now
+            Send Message
           </button>
         </form>
       </div>

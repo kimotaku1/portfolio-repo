@@ -1,45 +1,65 @@
 import React from "react";
-import Services_Data from "../../assets/services_data.js";
-import arrow_icon from "../../assets/arrow_icon.svg";
+import checkmarkIcon from "../../assets/checkmark.png"; // Import checkmark icon
 
 const Services = () => {
   return (
     <div
       id="services"
-      className="flex flex-col items-start lg:items-center lg:gap-20 justify-center gap-10 mx-4 md:mx-10 lg:mx-40 my-20"
+      className="flex flex-col items-start lg:items-center lg:gap-20 justify-center gap-10 mx-10 md:mx-10 lg:mx-40 my-10"
     >
-      <div className="relative">
-        <h1 className="px-4 md:px-8 text-4xl md:text-5xl font-medium items-start">
-          My Services
-        </h1>
+      <div className="flex flex-col">
+        <p className="text-lg lg:text-xl font-semibold text-gray-500 text-center">Explore My</p>
+        <h1 className="text-4xl lg:text-5xl font-bold">Experience</h1>
       </div>
-      {/* Adjusted grid configuration */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-9 mb-20 mx-5">
-        {Services_Data.map((service, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-10 border-2 border-white rounded-lg transition-all cursor-pointer hover:scale-105 hover:border-purple-300 hover:bg-gradient-to-r from-[#4B0082] to-[#8A2BE2]"
-          >
-            <h3 className="text-xl font-semibold">{service.s_no}</h3>
-            <h2
-              className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#fafafa] to-[#a2a2a2] bg-clip-text text-transparent"
-            >
-              {service.s_name}
-            </h2>
-            <p className="text-gray-400 text-base md:text-lg leading-6 md:leading-8 max-w-[300px]">
-              {service.s_desc}
-            </p>
-            <div className="flex items-center gap-3 mt-4">
-              <p className="text-base md:text-lg">Read More</p>
-              <img
-                src={arrow_icon}
-                alt="Arrow"
-                className="w-5 h-5 md:w-6 md:h-6"
-              />
+      <section id="experience" className="relative w-full">
+        <div className="flex flex-col items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Frontend Development */}
+            <div className="flex flex-col justify-center items-center border-solid border-2 border-gray-50 p-10 px-20 rounded-3xl">
+              <h2 className="text-gray-300 font-semibold text-xl lg:text-3xl mb-6 text-center">
+                Frontend Development
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-x-20">
+                {['HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript', 'Material UI'].map((tech, index) => (
+                  <article key={index} className="flex items-center gap-2 p-2 rounded-md shadow-md">
+                    <img
+                      src={checkmarkIcon}
+                      alt="Experience icon"
+                      className="w-8 h-8 cursor-default"
+                    />
+                    <div className="text-left">
+                      <h3 className="text-lg lg:text-xl">{tech}</h3>
+                      <p className="text-base lg:text-base text-gray-400">{index < 2 ? 'Experienced' : index < 4 ? 'Intermediate' : 'Basic'}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend Development */}
+            <div className="flex flex-col items-center border-solid border-2 border-gray-50 p-10 px-20 rounded-3xl">
+              <h2 className="text-gray-300 font-semibold text-xl lg:text-3xl mb-6 text-center">
+                Backend Development
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-x-20">
+                {['PostgreSQL', 'Node JS', 'Express JS', 'Git'].map((tech, index) => (
+                  <article key={index} className="flex items-center gap-2 p-2 rounded-md shadow-md">
+                    <img
+                      src={checkmarkIcon}
+                      alt="Experience icon"
+                      className="w-8 h-8 cursor-default"
+                    />
+                    <div className="text-left">
+                      <h3 className="text-lg lg:text-xl">{tech}</h3>
+                      <p className="text-base lg:text-base text-gray-400">{index < 2 ? 'Intermediate' : 'Basic'}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

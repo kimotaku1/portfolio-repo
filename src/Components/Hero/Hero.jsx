@@ -17,7 +17,7 @@ const Hero = () => {
         </span>{" "}
         Web developer.
       </h1>
-      <p className="text-center w-full md:w-3/4 lg:w-1/2 text-lg leading-8">
+      <p className="text-center w-full md:w-3/4 lg:w-1/2 text-lg leading-8 text-gray-300">
         I am a Web developer with 2 years of experience using React and
         NodeJS. I am passionate about using technology to solve real-world
         problems and aim to become a full-stack developer. Reach out if you'd
