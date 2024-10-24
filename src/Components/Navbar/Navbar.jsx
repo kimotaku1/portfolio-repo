@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import logo1 from "../../assets/logo1.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import menu_open from "../../assets/menu_open.svg";
 import menu_close from "../../assets/menu_close.svg";
@@ -13,8 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative flex items-center justify-between px-4 lg:px-40 py-6">
-      <img src={logo} alt="logo" className="h-14" />
+    <nav id="navbar" className="relative flex items-center justify-between px-4 lg:px-20 py-6 mx-1">
+      <img
+        src={logo1}
+        alt="logo"
+      />
 
       {/* Mobile Menu Toggle */}
       <button
@@ -53,7 +56,10 @@ const Navbar = () => {
       </ul>
 
       {/* Connect With Me Button (Desktop Only) */}
-      <div className="hidden lg:block w-44 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
+      <div
+        className="hidden lg:block w-44 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2]
+ text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center"
+      >
         <AnchorLink href="#contact" offset={50} className="text-white text-lg">
           Connect With Me
         </AnchorLink>

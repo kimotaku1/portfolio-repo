@@ -20,7 +20,7 @@ const About = () => {
             {['HTML & CSS', 'React JS', 'JavaScript', 'Next JS'].map((skill, index) => (
               <div key={index} className="flex items-center">
                 <p className='min-w-[150px] text-xl font-medium'>{skill}</p>
-                <hr className={`h-2 rounded-full bg-gradient-to-r from-[#DF8908] to-[#B415FF]
+                <hr className={`h-2 rounded-full bg-gradient-to-r from-[#4B0082] to-[#8A2BE2]
                   ${index === 0 ? 'w-2/3' : index === 1 ? 'w-1/2' : index === 2 ? 'w-3/4' : 'w-1/2'} ml-4`} />
               </div>
             ))}
@@ -29,13 +29,13 @@ const About = () => {
       </div>
       <div className="flex flex-col lg:flex-row justify-around w-full mb-20">
         <div className="flex flex-col items-center gap-2 hover:scale-110 transition-all">
-          <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent'>2+</h1>
+          <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] bg-clip-text text-transparent'>2+</h1>
           <p className='text-lg font-medium'>YEARS OF EXPERIENCE</p>
         </div>
         {/* Vertical line using a div */}
         <div className='hidden lg:block w-1 border-l border-gray-300 h-20 mx-4'></div>
         <div className="flex flex-col items-center gap-2 hover:scale-110 transition-all">
-          <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#DF8908] to-[#B415FF] bg-clip-text text-transparent'>10+</h1>
+          <h1 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] bg-clip-text text-transparent'>10+</h1>
           <p className='text-lg font-medium'>PROJECTS COMPLETED</p>
         </div>
       </div>

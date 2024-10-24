@@ -14,12 +14,7 @@ const Home = () => {
             responsive web applications with an emphasis on clean code and
             scalable architecture. Hands-on experience gained through
             collaborative hackathon projects and personal initiatives,
-            demonstrating a passion for problem-solving and innovation. Adept at
-            working in fast-paced environments, both individually and in teams,
-            with a focus on enhancing user experience and implementing efficient
-            backend systems. Eager to apply technical expertise and creativity
-            in an internship or professional setting to drive impactful digital
-            solutions and solve real-world problems.
+            demonstrating a passion for problem-solving and innovation.
           </p>
         </div>
 
@@ -41,11 +36,7 @@ const Home = () => {
                   React.js, Node.js, and MongoDB, enhancing user interfaces and
                   optimizing backend performance. Integrated third-party APIs
                   and services, ensuring seamless data communication and
-                  enhancing functionality. Collaborated with clients to gather
-                  requirements, propose technical solutions, and deliver
-                  projects on time. Utilized Tailwind CSS and DaisyUI for custom
-                  styling, ensuring high-performance and visually appealing
-                  UI/UX.
+                  enhancing functionality.
                 </p>
               </li>
               <li className="relative  flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:translate-y-1/2 before:rounded-full before:bg-black dark:before:bg-white before:transform">
@@ -59,9 +50,7 @@ const Home = () => {
                   applications under tight deadlines and collaborating in
                   cross-functional teams. Led the development of a chat
                   application with real-time messaging functionality using
-                  React.js, MongoDB, and Socket.io. Leveraged modern JavaScript
-                  frameworks and libraries, such as Vite, to ensure optimal
-                  build performance and development experience.
+                  React.js, MongoDB, and Socket.io.
                 </p>
               </li>
             </ul>
@@ -80,8 +69,6 @@ const Home = () => {
                   authentication, messaging, and chatroom management. Developed
                   and tested middleware, controllers, and routes, ensuring
                   clean, modular code for scalability and maintainability.
-                  Collaborated with frontend developers to integrate the API
-                  with a user-friendly React.js interface.
                 </p>
               </li>
               <li className="relative  flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:translate-y-1/2 before:rounded-full before:bg-black dark:before:bg-white before:transform">
@@ -97,11 +84,7 @@ const Home = () => {
                   interactive, mobile-responsive components using React.js and
                   Tailwind CSS. Improved website accessibility by implementing
                   WAI-ARIA standards, enhancing user experience for all
-                  audiences. Collaborated with a distributed team of developers
-                  via GitHub, actively participating in code reviews and project
-                  discussions. Identified and fixed bugs in existing components,
-                  improving performance and ensuring cross-browser
-                  compatibility.
+                  audiences. 
                 </p>
               </li>
             </ul>
@@ -120,9 +103,7 @@ const Home = () => {
                 {" "}
                 Completed over 300 coding challenges focused on JavaScript
                 fundamentals, including recursion, sorting algorithms, and data
-                manipulation techniques. Developed problem-solving skills by
-                applying algorithms in real-world scenarios, such as creating
-                search and sorting functions.
+                manipulation techniques.
               </p>
             </div>
             <div className="text-baseline space-y-3">
@@ -133,9 +114,7 @@ const Home = () => {
               <p className="text-sm text-gray-600  dark:text-gray-400 md:text-base">
                 In-depth training on React.js covering class and functional
                 components, React hooks, React Router for navigation, and Redux
-                for complex state management. Built several interactive web
-                applications, learning how to optimize performance and manage
-                side effects using hooks like useEffect and useState.
+                for complex state management.
               </p>
             </div>
             <div className="text-baseline space-y-3">
@@ -146,8 +125,7 @@ const Home = () => {
                 Gained hands-on experience in building scalable and secure
                 RESTful APIs with Node.js and Express. Learned essential backend
                 concepts such as middleware, authentication (JWT), error
-                handling, and session management. Created and deployed a fully
-                functional backend project integrating MongoDB for data storage.
+                handling, and session management.
               </p>
             </div>
             <div className="text-baseline space-y-3">
@@ -159,8 +137,7 @@ const Home = () => {
                 document-oriented design, collections, and BSON format.
                 Implemented CRUD operations, created indexes to optimize
                 queries, and worked with aggregation pipelines for data
-                analysis. Applied MongoDB in building and maintaining databases
-                for small-to-medium scale web applications.
+                analysis.
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import logo1 from "../../assets/logo1.svg";
 import user_icon from "../../assets/user_icon.svg";
 import { BiLogoLinkedin, BiLogoGithub, BiLogoInstagram } from "react-icons/bi";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -26,12 +26,12 @@ const Footer = () => {
     <footer className="flex flex-col gap-8 mt-12 px-8 lg:px-32 mx-5">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center relative">
-        <div className="flex flex-col gap-4 lg:w-1/2">
-          <img src={logo} alt="Logo" className="w-16" />
+        <div className="flex flex-col lg:w-1/2">
+          <AnchorLink href="#navbar" offset={50} className="cursor-pointer">
+            <img src={logo1} alt="Logo" className="w-2/6 pb-2 lg:pb-1" />
+          </AnchorLink>
           <p className="text-lg text-gray-400">
-            Let's connect and create something amazing together! When I’m not
-            coding, I’m pushing boundaries in Mobile Legends: Bang Bang as a pro
-            player. Feel free to reach out to collaborate on coding projects or
+            Let's connect and create something amazing together! Feel free to reach out to collaborate on coding projects or
             chat about gaming strategies.
           </p>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
           <button
             onClick={handleSubscribe}
-            className="w-40 py-3 bg-gradient-to-r from-[#DF8908] to-[#B415FF] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform"
+            className="w-40 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform"
           >
             Subscribe
           </button>
@@ -81,7 +81,7 @@ const Footer = () => {
             aria-label="GitHub Profile"
             className="hover:text-blue-500"
           >
-          <BiLogoGithub size={30} />
+            <BiLogoGithub size={30} />
           </a>
         </div>
         <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ const Footer = () => {
             aria-label="Instagram Profile"
             className="hover:text-blue-500"
           >
-          <BiLogoInstagram size={30} />
+            <BiLogoInstagram size={30} />
           </a>
         </div>
         <div className="flex items-center gap-2">
