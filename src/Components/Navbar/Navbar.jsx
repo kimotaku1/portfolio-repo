@@ -13,11 +13,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav id="navbar" className="relative flex items-center justify-between px-4 lg:px-20 py-6 mx-1">
-      <img
-        src={logo1}
-        alt="logo"
-      />
+    <nav
+      id="navbar"
+      className="relative flex items-center justify-between px-4 lg:px-20 py-6 mx-1"
+    >
+      <AnchorLink href="#navbar">
+        <img src={logo1} alt="logo" />
+      </AnchorLink>
 
       {/* Mobile Menu Toggle */}
       <button
@@ -38,7 +40,7 @@ const Navbar = () => {
           menuOpen ? "right-0 top-0 " : "-right-full"
         } fixed top-0 w-[300px] h-full bg-gray-800 z-50 flex flex-col items-end gap-6 px-8 py-20 transition-transform duration-500 lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
       >
-        {["home", "about", "services", "work", "contact"].map((item) => (
+        {["home", "about", "experience", "project", "contact"].map((item) => (
           <li key={item} className="relative w-full">
             <AnchorLink
               href={`#${item}`}

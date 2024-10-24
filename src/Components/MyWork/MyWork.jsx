@@ -6,7 +6,7 @@ import { BiCode, BiLogoGithub } from "react-icons/bi";
 const MyWork = () => {
   return (
     <div
-      id="work"
+      id="project"
       className="flex flex-col items-start lg:items-center justify-center gap-10 lg:gap-20 mx-4 md:mx-20 lg:mx-40 my-20"
     >
       <div className="relative">

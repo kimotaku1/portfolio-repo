@@ -4,7 +4,7 @@ import checkmarkIcon from "../../assets/checkmark.png"; // Import checkmark icon
 const Services = () => {
   return (
     <div
-      id="services"
+      id="experience"
       className="flex flex-col items-start lg:items-center lg:gap-20 justify-center gap-10 mx-10 md:mx-10 lg:mx-40 my-10"
     >
       <div className="flex flex-col">

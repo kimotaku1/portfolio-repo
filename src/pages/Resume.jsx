@@ -15,12 +15,17 @@ const Resume = () => {
   };
 
   const downloadResume = () => {
-    console.log("Download button clicked"); // Debugging line
     const element = resumeRef.current;
     const downloadButton = downloadButtonRef.current;
 
     // Hide the download button
     downloadButton.style.display = "none";
+    
+    // Hide the dark mode toggle button
+    const darkModeToggle = element.querySelector('.dark-mode-toggle');
+    if (darkModeToggle) {
+      darkModeToggle.style.display = 'none'; // Hide dark mode toggle
+    }
 
     const opt = {
       margin: 0,
@@ -31,7 +36,13 @@ const Resume = () => {
     };
 
     html2pdf().from(element).set(opt).save().finally(() => {
+      // Show the download button again
       downloadButton.style.display = "block";
+      
+      // Show the dark mode toggle button again
+      if (darkModeToggle) {
+        darkModeToggle.style.display = 'block'; // Show dark mode toggle again
+      }
     });
   };
 
