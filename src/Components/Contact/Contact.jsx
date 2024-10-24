@@ -34,11 +34,11 @@ const Contact = () => {
       className="flex flex-col items-center justify-center gap-10 lg:gap-20 mx-40 my-20"
     >
       <div className="">
-        <h1 className="text-5xl font-semibold px-6 w-80 left-0">Get in touch</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold px-6 w-80 left-0">Get in touch</h1>
       </div>
       <div className="flex flex-col md:flex-row gap-20 w-screen px-7 lg:w-auto">
         <div className="flex flex-col gap-8 mx-5">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-transparent bg-clip-text">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-transparent bg-clip-text">
             Let's talk
           </h1>
           <p className="max-w-lg text-gray-300 text-lg leading-relaxed">

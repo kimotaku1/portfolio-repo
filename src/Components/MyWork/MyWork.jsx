@@ -6,7 +6,7 @@ const MyWork = () => {
   return (
     <div id='work' className='flex flex-col items-start lg:items-center justify-center gap-10 lg:gap-20 mx-4 md:mx-20 lg:mx-40 my-20'>
       <div className="relative">
-        <h1 className='text-5xl font-medium px-8 text-start'>My Latest Work</h1>
+        <h1 className='text-4xl md:text-5xl font-medium px-8 text-start'>My Latest Work</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 mx-5">
         {mywork_data.map((work, index) => (
@@ -18,7 +18,7 @@ const MyWork = () => {
           />
         ))}
       </div>
-      <div className="flex items-center gap-4 border-2 border-white rounded-full px-6 py-4 font-medium text-lg cursor-pointer transition-all hover:gap-6 hover:bg-gray-800 mx-8">
+      <div className="flex items-center gap-4 border-2 border-white rounded-full px-6 py-4 font-medium text-base cursor-pointer transition-all hover:gap-6 hover:bg-gray-800 mx-8">
         <p>Show More</p>
         <img src={arrow_icon} alt="Arrow pointing right" className='w-4 h-4' /> {/* Ensure arrow size is consistent */}
       </div>

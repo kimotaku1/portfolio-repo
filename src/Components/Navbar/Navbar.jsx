@@ -43,7 +43,7 @@ const Navbar = () => {
             <AnchorLink
               href={`#${item}`}
               offset={50}
-              className="text-white text-lg lg:text-base transition-colors duration-300 hover:text-purple-400 w-full text-right"
+              className="text-white text-lg lg:text-lg transition-colors duration-300 hover:text-purple-400 w-full text-right"
               onClick={() => {
                 setActiveMenu(item);
                 setMenuOpen(false); // Close the menu on item click

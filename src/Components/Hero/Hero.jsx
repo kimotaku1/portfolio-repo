@@ -24,7 +24,7 @@ const Hero = () => {
         like to learn more!
       </p>
       <div className="flex flex-col md:flex-row items-center gap-6 text-lg font-medium mb-12">
-        <div className="w-44 py-3 bg-gradient-to-r from-[#8049a7] to-[#8A2BE2] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
+        <div className="w-44 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center">
           <AnchorLink className="text-white" offset={50} href="#contact">
             Connect With Me
           </AnchorLink>

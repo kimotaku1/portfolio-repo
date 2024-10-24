@@ -7,7 +7,7 @@ import { BiDownload } from "react-icons/bi";
 const Resume = () => {
   const [darkMode, setDarkMode] = useState(false);
   const resumeRef = useRef();
-  const downloadButtonRef = useRef(); // Create a ref for the download button
+  const downloadButtonRef = useRef();
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
@@ -15,9 +15,10 @@ const Resume = () => {
   };
 
   const downloadResume = () => {
+    console.log("Download button clicked"); // Debugging line
     const element = resumeRef.current;
     const downloadButton = downloadButtonRef.current;
-    
+
     // Hide the download button
     downloadButton.style.display = "none";
 
@@ -30,7 +31,6 @@ const Resume = () => {
     };
 
     html2pdf().from(element).set(opt).save().finally(() => {
-      // Show the download button again after PDF is generated
       downloadButton.style.display = "block";
     });
   };
@@ -38,20 +38,18 @@ const Resume = () => {
   return (
     <>
       <div
-        className={`resume min-h-screen w-full flex flex-col sm:flex-row subpixel-antialiased ${
-          darkMode ? "bg-black" : "bg-white"
-        }`}
+        className={`resume min-h-screen w-full flex flex-col sm:flex-row subpixel-antialiased ${darkMode ? "bg-black" : "bg-white"}`}
         ref={resumeRef}
       >
         {/* Download Button */}
-        <div
-          className="fixed right-10 bottom-5 p-3 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg transition-all duration-300 ease-in-out"
+        <button
+          className="fixed right-10 bottom-5 p-4 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg transition-all duration-300 ease-in-out border-solid border-red-300"
+          onClick={downloadResume}
           ref={downloadButtonRef}
+          style={{ touchAction: 'manipulation', zIndex: 10 }} 
         >
-          <button onClick={downloadResume}>
-            <BiDownload className="text-2xl" />
-          </button>
-        </div>
+          <BiDownload className="text-2xl" />
+        </button>
 
         {/* Resume Content */}
         <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
