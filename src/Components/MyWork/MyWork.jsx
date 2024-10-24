@@ -1,7 +1,7 @@
 import React from "react";
 import mywork_data from "../../assets/mywork_data";
 import arrow_icon from "../../assets/arrow_icon.svg";
-import { BiCode, BiLogoGithub } from "react-icons/bi";
+import { BiCode} from "react-icons/bi";
 
 const MyWork = () => {
   return (

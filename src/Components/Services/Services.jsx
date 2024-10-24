@@ -1,5 +1,7 @@
 import React from "react";
-import checkmarkIcon from "../../assets/checkmark.png"; // Import checkmark icon
+import checkmarkIcon from "../../assets/checkmark.png";
+import {frontend_data, backend_data} from "../../assets/services_data";
+import checkmark from "../../assets/checkmark.svg"
 
 const Services = () => {
   return (
@@ -20,16 +22,16 @@ const Services = () => {
                 Frontend Development
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-x-20">
-                {['HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript', 'Material UI'].map((tech, index) => (
-                  <article key={index} className="flex items-center gap-2 p-2 rounded-md shadow-md">
+                {frontend_data.map((item, index) => (
+                  <article key={index} className="flex items-center gap-4 p-2 rounded-md shadow-md">
                     <img
-                      src={checkmarkIcon}
+                      src={checkmark}
                       alt="Experience icon"
-                      className="w-8 h-8 cursor-default"
                     />
+                    
                     <div className="text-left">
-                      <h3 className="text-lg lg:text-xl">{tech}</h3>
-                      <p className="text-base lg:text-base text-gray-400">{index < 2 ? 'Experienced' : index < 4 ? 'Intermediate' : 'Basic'}</p>
+                      <h3 className="text-lg lg:text-xl">{item.s_name}</h3>
+                      <p className="text-base lg:text-base text-gray-400">{item.s_type}</p>
                     </div>
                   </article>
                 ))}
@@ -42,16 +44,15 @@ const Services = () => {
                 Backend Development
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-x-20">
-                {['PostgreSQL', 'Node JS', 'Express JS', 'Git'].map((tech, index) => (
-                  <article key={index} className="flex items-center gap-2 p-2 rounded-md shadow-md">
+                {backend_data.map((item, index) => (
+                  <article key={index} className="flex items-center gap-4 p-2 rounded-md shadow-md">
                     <img
-                      src={checkmarkIcon}
+                      src={checkmark}
                       alt="Experience icon"
-                      className="w-8 h-8 cursor-default"
                     />
                     <div className="text-left">
-                      <h3 className="text-lg lg:text-xl">{tech}</h3>
-                      <p className="text-base lg:text-base text-gray-400">{index < 2 ? 'Intermediate' : 'Basic'}</p>
+                      <h3 className="text-lg lg:text-xl">{item.s_name}</h3>
+                      <p className="text-base lg:text-base text-gray-400">{item.s_type}</p>
                     </div>
                   </article>
                 ))}

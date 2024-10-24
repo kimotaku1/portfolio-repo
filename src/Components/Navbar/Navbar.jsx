@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import logo1 from "../../assets/logo1.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import menu_open from "../../assets/menu_open.svg";
-import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,25 +21,47 @@ const Navbar = () => {
 
       {/* Mobile Menu Toggle */}
       <button
-        className="lg:hidden focus:outline-none"
+        className="lg:hidden focus:outline-none z-40"
         onClick={toggleMenu}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
       >
-        <img
-          src={menuOpen ? menu_close : menu_open}
-          alt={menuOpen ? "Close menu" : "Open menu"}
-          className="cursor-pointer z-20 w-8"
-        />
+        {menuOpen ? (
+          // Close icon
+          <svg
+            width="30"
+            height="29"
+            viewBox="0 0 36 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="4" rx="2" fill="white" />
+            <rect y="12.5" width="36" height="4" rx="2" fill="white" />
+            <rect y="25.5" width="36" height="4" rx="2" fill="white" />
+          </svg>
+        ) : (
+          // Open icon (hamburger)
+          <svg
+            width="30"
+            height="29"
+            viewBox="0 0 36 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="36" height="4" rx="2" fill="white" />
+            <rect y="12.5" width="36" height="4" rx="2" fill="white" />
+            <rect y="25.5" width="36" height="4" rx="2" fill="white" />
+          </svg>
+        )}
       </button>
 
       {/* Navigation Menu */}
       <ul
-        className={`${
-          menuOpen ? "right-0 top-0 " : "-right-full"
-        } fixed top-0 w-[300px] h-full bg-gray-800 z-50 flex flex-col items-end gap-6 px-8 py-20 transition-transform duration-500 lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
+        className={`fixed top-0 w-[200px] h-full bg-gray-800 z-50 flex flex-col items-start gap-6 pl-16 py-20 transition-transform duration-500 ${
+          menuOpen ? "right-0" : "-right-full"
+        } lg:flex lg:flex-row lg:relative lg:right-auto lg:w-auto lg:h-auto lg:gap-12 lg:px-0 lg:py-0 lg:bg-transparent`}
       >
         {["home", "about", "experience", "project", "contact"].map((item) => (
-          <li key={item} className="relative w-full">
+          <li key={item} className="w-full">
             <AnchorLink
               href={`#${item}`}
               offset={50}
@@ -59,8 +79,7 @@ const Navbar = () => {
 
       {/* Connect With Me Button (Desktop Only) */}
       <div
-        className="hidden lg:block w-44 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2]
- text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center"
+        className="hidden lg:block w-44 py-3 bg-gradient-to-r from-[#4B0082] to-[#8A2BE2] text-white text-lg font-medium rounded-full cursor-pointer transform hover:scale-105 transition-transform text-center"
       >
         <AnchorLink href="#contact" offset={50} className="text-white text-lg">
           Connect With Me
